@@ -1,0 +1,555 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content="PVT, flash simulation, thermodynamics, hydrocarbon fluids"/>
+            <title>Notations and References</title>
+            <script type="text/javascript"
+                    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+                        MathJax.Hub.Config({
+                            extensions: ["tex2jax.js","TeX/noErrors.js","TeX/AMSsymbols.js"],
+                            jax: ["input/TeX","output/HTML-CSS"],
+                            tex2jax: {
+                                inlineMath: [['$','$'],["\\(","\\)"]],
+                                displayMath: [['\\[','\\]'], ['$$','$$']]
+                            },
+                            "HTML-CSS": {availableFonts:["TeX"]}
+                        });
+            </script>
+            <link href="fluid.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter20713309 = new Ya.Metrika({id:20713309,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/20713309" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        <div id="wrapper">
+            <div id="header">
+                <h1>Notations and References</h1>
+            </div>
+            <div id="body">
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Notations</h2>
+
+                <p>
+                        Suppose we are provided with a simple fluid. Let this fluid has
+                        the following physical characteristics:
+                    </p>
+
+                    <ul>
+                        <li>$p, \left[\text{Pa}\right]$ &mdash; [absolute] value of pressure</li>
+                        <li>$n, \left[\text{mol}\right]$ &mdash; number of moles of a substance</li>
+                        <li>$V, \left[\frac{\text{m}^3}{\text{mol}}\right]$ &mdash; volume of 1 mole of fluid</li>
+                        <li>$T, \left[\text{K}\right]$ &mdash; absolute temperature</li>
+                        <li>$R = 8.314462175, \left[\frac{\text{J}}{\text{mol} \cdot \text{K}}\right]$ &mdash;
+                            <a href="http://en.wikipedia.org/wiki/Gas_constant">ideal gas constant</a></li>
+                        <li>$p_c, \left[\text{Pa}\right]$ &mdash; pressure at the critical point</li>
+                        <li>$V_c, \left[\frac{\text{m}^3}{\text{mol}}\right]$ &mdash; molar volume at the critical point</li>
+                        <li>$T_c, \left[\text{K}\right]$ &mdash; absolute temperature at the critical point</li>
+                        <li>$\omega, \left[0\right]$ &mdash; <a href="http://en.wikipedia.org/wiki/Acentric_factor">
+                                acentric factor</a> of the fluid
+                        </li>
+                        <li>$Z, \left[0\right]$ &mdash; <a href="http://en.wikipedia.org/wiki/Compressibility_factor">
+                                compressibility factor</a> of the fluid
+                        </li>
+                    </ul>
+
+<!-- ******************************************************************************************** -->
+                <hr/>
+                <h2>Books</h2>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Pedersen, K. S. and Christensen, P. L. (2006).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120178336?hash=1edde402ed71c05e63">
+                            "Phase Behavior of Petroleum Reservoir Fluids"</a>.
+                        <i>CRC Press</i>
+                        ISBN:9780824706944.
+                    </p>
+
+                    <p>
+                        Book could be considered as a good extension of Calsep internal
+                        survey and a nice cook-book on hydrocarbon simulation. Provides
+                        some experimental data.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Poling, B. E., Prausnitz, J. M. and O'Conell, J. P. (2001).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118923438?hash=806bf14d1eae45bd31">
+                            "The Properties of Gases and Liquids"</a>.
+                        <i>McGraw-Hill Prof Med/Tech</i>.
+                        ISBN:0070116822, 9780070116825.
+                    </p>
+
+                    <p>
+                        Comprehensive survey of the literature and methods in
+                        thermodynamics of gases, liquids
+                        and mixtures. Contains extensive and useful tables of properties
+                        of 460+ simple components.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Haile, J. M. and O'Connell, J. P. (2005).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119997193?hash=93b8c54ebfca89a6ba">
+                            "Thermodynamics: Fundamentals for Applications"</a>.
+                        <i>Cambridge University Press</i>.
+                        ISBN:9780521582063.
+                    </p>
+
+                    <p>
+                        Detailed and illustrative introduction into thermodynamics
+                        for engineers.
+                        Pretty neat both on form and spirit.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Reid, C. R., Prausnitz, J. M. and Poling, B. E. (1987);
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_123335052?hash=7a743b963d2c80f77e">
+                            "The Properties of Gases and Liquids"</a>.
+                        <i>McGraw-Hill Prof Med/Tech</i>
+                        ISBN: 0070517991.
+                    </p>
+
+                    <p>
+                        More like a textbook version of
+                        Poling Prausnitz and O'Conell books.
+                        Contains some table for $C_p^0$
+                        computation by contributional method.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Landau, L. D. and Lifshitz, E. M. (1959).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122990229?hash=2ddc0be958ab3a9c21">
+                            "Vol. 6: Fluid Mechanics." (in Russian)</a>.
+                        <i>Pergamon Press.</i>
+                        ISBN: 978-0-08-009104-4.
+                    </p>
+
+                    <p>
+                        Detailed and explicit textbook with a good examples,
+                        motivating for understanding.
+                    </p>
+                </div>
+
+<!-- ******************************************************************************************** -->
+                <hr/>
+                <h2>Articles</h2>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Peng, D. Y., and Robinson, D. B. (1976).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118789101?hash=c6a835934509d87711">
+                            "A New Two-Constant Equation of State"</a>.
+                        <i>Industrial and Engineering Chemistry: Fundamentals</i>
+                        <b>15</b>: 59&ndash;64.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1021%2Fi160057a011">10.1021/i160057a011</a>.
+                    </p>
+
+                    <p>
+                        Original paper on Peng&ndash;Robinson equation. Mixture rules
+                        and formula for fugacity coefficients are presented.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Meichelsen, M. L. (1982a).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120049122?hash=8849f0fb561269b4b6">
+                            "The isothermal flash problem. Part I. Stability"</a>.
+                        <i>Fluid Phase Equilibria</i>
+                        <b>9 (1)</b>: 1&ndash;19.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/0378-3812(82)85001-2">10.1016/0378-3812(82)85001-2</a>.
+                    </p>
+
+                    <p>
+                        Paper about methods for stability testing of the phase under specified conditions.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Meichelsen, M. L. (1982a).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120049122?hash=8849f0fb561269b4b6">
+                            "The isothermal flash problem. Part I. Stability"</a>.
+                        <i>Fluid Phase Equilibria</i>
+                        <b>9 (1)</b>: 1&ndash;19.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/0378-3812(82)85001-2">10.1016/0378-3812(82)85001-2</a>.
+                    </p>
+
+                    <p>
+                        Paper about methods for stability testing of the phase under specified conditions.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Meichelsen, M. L. (1982b).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120049234?hash=28df581c25b54df98e">
+                            "The isothermal flash problem. Part II. Phase-split calculation"</a>.
+                        <i>Fluid Phase Equilibria</i>
+                        <b>9 (1)</b>: 21&ndash;40.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/0378-3812(82)85002-4">10.1016/0378-3812(82)85002-4</a>.
+                    </p>
+
+                    <p>
+                        Paper on computation of molar percent
+                        characterization of phases for more than one phase
+                        system.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Olivera-Fuentes, C. (1991).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119862666?hash=b2ce19a68f1107a998">
+                            "Multicomponent Fugacity Coefficients and Residual Properties from Pressure-Explicit EoS"</a>.
+                        <i>Chemical Engineering Science</i>
+                        <b>46 (8)</b>: 2019&ndash;2029.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/0009-2509(91)80161-Q">10.1016/0009-2509(91)80161-Q</a>.
+                    </p>
+
+                    <p>
+                        Some overview of computation of residual property for general cubic EoS.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Redlich, O. and Kister, A. T. (1948).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_123691429?hash=dea18f333159bbef7f">
+                            "Algebraic Representation of Thermodynamic
+                            Properties and the Classification of Solutions"</a>.
+                        <i>Industrial and Engineering Chemistry</i>
+                        <b>40 (2)</b>: 345&ndash;348.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1021/ie50458a036">10.1021/ie50458a036</a>.
+                    </p>
+
+                    <p>
+                        Original paper on Redlich-Kister equation for activity coefficients.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Leland, Th. W. Jr., and Chapellear, P. S. (1968).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118927560?hash=1fb8bb8a3469ed3b8f">
+                            "The Corresponding States Principle — A Review of Current Theory and Practice"</a>.
+                        <i>Industrial and Engineering Chemistry</i>
+                        <b>60 (7)</b>: 15&ndash;43.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1021%2Fie50703a005">10.1021/ie50703a005</a>.
+                    </p>
+
+                    <p>
+                        Some philosophy and explanation of corresponding states principle.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Chueh, P. L., and Prausnitz, J. M. (1967).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122603162?hash=e75fb7e39038d73a86">
+                            "Vapor-Liquid Equilibria at High Pressures.
+                             Calculation of Partial Molar Volumes in Nonpolar Liquid Mixtures"</a>.
+                        <i>AIChE Journal</i>
+                        <b>13 (6)</b>: 1099&ndash;1107.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002/aic.690130612">10.1002/aic.690130612</a>.
+                    </p>
+
+                    <p>
+                        Original paper on some aspects of mixing rules.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Huron, M.-J., and Vidal, J. (1979).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122603215?hash=63535fa5b07fe6e51e">
+                            "New Mixing Rules in Simple Equations of State for Representing
+                            Vapor-liquid Equilibria of Strongly Non-Ideal Mixtures"</a>.
+                        <i>Fluid Phase Equilibria</i>
+                        <b>3 (4)</b>: 255&ndash;271.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/0378-3812(79)80001-1">10.1016/0378-3812(79)80001-1</a>.
+                    </p>
+
+                    <p>
+                        Original paper on the corresponding mixing rules.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Bondi, A. (1966).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122129558?hash=1c1fa87d65b2b6cde7">
+                            "Estimation of Heat Capacity of Liquids"</a>.
+                        <i>Industrial and Engineering Chemistry Fundamentals</i>
+                        <b>5 (4)</b>: 442&ndash;449.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1021/i160020a001">10.1021/i160020a001</a>.
+                    </p>
+
+                    <p>
+                        Some procedure for more accurate computation of the heat capacity of
+                        the liquid.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        R&#367;&#382;i&#269;ka, V. Jr. and Domalski, E. S. (1993).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122249013?hash=026da8ae098c2388ce">
+                            "Estimation Of the Heat Capacities of Organic Liquids as a Function of Temperature
+                            Using Group Additivity, I. Hydrocarbon Compounds"</a>.
+                        <i>Journal of Physical and Chemical Reference Data</i>
+                        <b>22 (3)</b>: 597&ndash;618.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1063/1.555923">10.1063/1.555923</a>.
+                    </p>
+
+                    <p>
+                        Some procedure for computation of ideal gas heat capacity using
+                        contributional method, part 1.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        R&#367;&#382;i&#269;ka, V. Jr. and Domalski, E. S. (1993).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122249170?hash=5ff1f2fbc6bfd1df1c">
+                            "Estimation Of the Heat Capacities of Organic Liquids as a Function of Temperature
+                            Using Group Additivity, II. Compounds of Carbon, Hydrogen, Halogens, Nitrogen, Oxygen, and Sulfur"</a>.
+                        <i>Journal of Physical and Chemical Reference Data</i>
+                        <b>22 (3)</b>: 619&ndash;657.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1063/1.555924">10.1063/1.555924</a>.
+                    </p>
+
+                    <p>
+                        Some procedure for computation of ideal gas heat capacity using
+                        contributional method, part 2.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        R&#367;&#382;i&#269;ka, V. Jr. and Domalski, E. S. (2004).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122249272?hash=70a368b2860e10f36f">
+                            "Estimation Of the Heat Capacities of Organic Liquids as a Function of Temperature
+                            Using Group Additivity, An Amendment."</a>.
+                        <i>Journal of Physical and Chemical Reference Data</i>
+                        <b>34 (1)</b>: 1071&ndash;1081.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1063/1.1889439">10.1063/1.1889439</a>.
+                    </p>
+
+                    <p>
+                        Some procedure for computation of ideal gas heat capacity using
+                        contributional method, part 3.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Kieffer, S. W. (1977).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_121545903?hash=e4c504c9d1905b890f">
+                            "Sound Speed in Liquid-Gas Mixtures: Water-Air and Water-Steam"</a>.
+                        <i>Journal of Geophysical Research</i>
+                        <b>82 (20)</b>: 2895&ndash;2904.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1029/JB082i020p02895">10.1029/JB082i020p02895</a>.
+                    </p>
+
+                    <p>
+                        On sonic speed in two phase system. Mainly about water and water vapor.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Dymond, J. H., and Malhotra, R. (1988).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119496318?hash=02d6d2ea540f9bcf5a">
+                            "The Tait equation: 100 years on"</a>.
+                        <i>International Journal of Thermophysics</i>
+                        <b>9 (6)</b>: 941&ndash;951.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1007%2FBF01133262">10.1007/BF01133262</a>.
+                    </p>
+
+                    <p>
+                        Overview of Tait equation for liquid densities (volumes).
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Hankinson, R. W., and Thomson, G. H. (1979).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119155017?hash=9f004ce2dd9ddb0b2f">
+                            "A New Correlation for Saturated Densities of Liquids and Their Mixtures"</a>.
+                        <i>AIChE Journal</i>
+                        <b>25 (4)</b>: 653&ndash;663.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002%2Faic.690250412">10.1002/aic.690250412</a>.
+                    </p>
+
+                    <p>
+                        Compact correlation formulas for saturated liquids, require minimum of
+                        data. "Part 1".
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Thomson, G. H., Brobst, K. R., and Hankinson, R. W. (1982).
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119465297?hash=4192e46270e90eafd0">
+                            "An Improved Correlation Compressed Liquids and Liquid Mixtures"</a>.
+                        <i>AIChE Journal</i>
+                        <b>28 (4)</b>: 671&ndash;676.
+                        DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002%2Faic.690280420">10.1002/aic.690280420</a>.
+                    </p>
+
+                    <p>
+                        Compact correlation formulas for saturated liquids, require minimum of
+                        data. "Part 2".
+                    </p>
+                </div>
+
+<!-- ******************************************************************************************** -->
+                <hr/>
+                <h2>Other</h2>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Calsep: internal survey
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118883428?hash=3df594bf5a6e18e6bd">
+                            "Method documentation for PVTsim 16"</a>.
+                    </p>
+
+                    <p>
+                        Description of the skeleton of the logic of PVTsim 16. Not very detailed,
+                        but contained a lot of references.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+
+                <div class="post">
+
+                    <p class="datalink">
+                        Chung-Nin Mak, P.
+                        <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122304351?hash=1af4c4c17375391f80">
+                            "Thermodynamic Properties from Cubic Equation of State"</a>.
+                        <i>Master Thesis at UBC</i>.
+                    </p>
+
+                    <p>
+                        Explicit formulas for properties via PR and SRK equation and for
+                        general cubic pressure-explicit eos as well.
+                    </p>
+                </div>
+
+                <!-- **************************************************************************** -->
+            </div>
+            <div id="footer">
+                <p>
+                    This template is created by <a href="http://kshmakov.org" target="_blank">Kirill Shmakov</a>.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content="heat capacity, heat capacities"/>
+        <title>Heat Capacities</title>
+        <script type="text/javascript"
+                src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+                        MathJax.Hub.Config({
+                            extensions: ["tex2jax.js","TeX/noErrors.js","TeX/AMSsymbols.js"],
+                            jax: ["input/TeX","output/HTML-CSS"],
+                            tex2jax: {
+                                inlineMath: [['$','$'],["\\(","\\)"]],
+                                displayMath: [['\\[','\\]'], ['$$','$$']]
+                            },
+                            "HTML-CSS": {availableFonts:["TeX"]}
+                        });
+        </script>
+        <link href="fluid.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter20713309 = new Ya.Metrika({id:20713309,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/20713309" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        <div id="wrapper">
+            <div id="header">
+                <h1>Heat Capacities</h1>
+            </div>
+            <div id="body">
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>EoS Approach</h2>
+
+                <h3>General</h3>
+
+                <p>
+                    According to Haile and O'Connell (2005), heat capacities are sensitive to
+                    changes in T, generally they increase with increasing T. But,
+                    except near the gas-liquid critical point, they are weak functions
+                    of P and V. This allows us to treat capacities
+                    $C_p$ and $C_v$ mainly as the function of $T$:
+                    $C_p = C_p(T)$ and $C_v = C_v(T)$
+                </p>
+
+                <p>
+                    Let we are provided with a general cubic equation of state
+                    given in the form
+                    \[
+                        P = \frac{RT}{V - b} - \frac{a(T)}{V^2 + \nu b V + \mu b^2}
+                    \]
+                    with a coupled compressibility factor equation being
+                    \[
+                        Z^3 + (\nu B - B - 1)Z^2 + (A + \mu B^2 - \nu B - \nu B^2) Z
+                        - (AB + \mu B^2 + \mu B^3) = 0
+                    \]
+                    where $A = a(T) P \left/ R^2 T^2 \right.$ and $B = bP \left/ RT \right.$.
+                </p>
+
+                <p>
+                    There are well known identities:
+                    \[
+                        C_v - C_p = T \left(\frac{\partial V}{\partial T}\right)^2_P \left/
+                        \left(\frac{\partial V}{\partial P}\right)_T \right.
+                        = T \left(\frac{\partial P}{\partial T}\right)^2_V \left/
+                        \left(\frac{\partial P}{\partial V}\right)_T \right.
+                    \]
+                    Using equation of state, we could reduce the computation of $C_v$
+                    to the computation of $C_p$ as follows.
+                </p>
+
+                <table>
+                    <tr>
+                        <td>
+                            \[
+                                \left(\frac{\partial P}{\partial T}\right)_V =
+                                \frac{R}{V - b} - \frac{a'(T)}{V^2 + \nu b V + \mu b^2}
+                            \]
+                        </td>
+                        <td>
+                            \[
+                                \left(\frac{\partial P}{\partial V}\right)_T =
+                                \frac{a(T)(2V + \nu b)}{(V^2 + \nu b V + \mu b^2)^2} - \frac{RT}{(V - b)^2}
+                            \]
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    \[
+                        C_v - C_p = T\frac{\left[R (V^2 + \nu b V + \mu b^2) - a'(T)(V - b)\right]^2}
+                        {a(T)(2V + \nu b)(V - b)^2 - RT(V^2 + \nu b V + \mu b^2)^2}
+                    \]
+                </p>
+
+                <p>
+                    Now, using corresponding states principle we could split our
+                    isobaric heat capacity $C_p$ into reference value $C_p^0$
+                    computed for ideal gas and departure function $C_p^{\text{res}}$:
+                    \[
+                        C_p = C_p^0 + C_p^{\text{res}}
+                    \]
+
+                    Our task now is to compute both summands.
+                </p>
+
+                <h3>Ideal Gas</h3>
+
+                <p>
+                    Big advantage of the ideal gas setting is the independence of its
+                    parameters. We could express isobaric heat capacity of the mixture
+                    through the capacities of its components:
+                    \[
+                        C_p^0 = \sum_{i=1}^N z_i C^0_{p, i}
+                    \]
+                </p>
+
+                <p>
+                    There are several methods for estimating isobaric heat capacity of
+                    the simple fluid. We will mention Joback method and
+                    TRC polynomial equation for $C^0_p /R$. We first describe
+                    Joback method and then TRC polynomial equation.
+                </p>
+
+                <p>
+                    The Joback method  described in section 3-3 of Poling et. al (2001)
+                    or in section 6-3 of Reid et. al (1987).
+                    This is the contributional method, i.e. it forms
+                    the required capacity counting different parts of molecular
+                    structure like &mdash;CH<sub>3</sub>, &mdash;COOH, etc.,
+                    so it is good for the cases of simple fluid with only
+                    only chemical formula known.
+                </p>
+
+                <p>
+                    Main idea that $C_p^0$ being primary the function of temperature
+                    is approximated as
+                    \[
+                        C_p^0(T) = A + BT + CT^2 + DT^3
+                    \]
+                    where $A$, $B$, $C$ and $D$ depend on the structure of the
+                    molecule and computed as follows:
+                </p>
+
+                <table>
+                    <tr>
+                        <td>
+                            $$A = \sum_{j=1}^k n_j \Delta_a - 37.93$$
+                        </td>
+                        <td>
+                            $$B = \sum_{j=1}^k n_j \Delta_b + 0.210$$
+                        </td>
+                    </tr><tr>
+                        <td>
+                            $$C = \sum_{j=1}^k n_j \Delta_c - 3.91 \times 10^{-4}$$
+                        </td>
+                        <td>
+                            $$D = \sum_{j=1}^k n_j \Delta_d + 2.06 \times 10^{-7}$$
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    Corresponding deltas values could be found in table 6-1 of Reid et.
+                    al (1987) or table C-1 of Poling et. al (2001).
+                </p>
+
+                <p>
+                    TRC polynomial equation is due to Thermodynamics Research Center
+                    at College Station, TX, USA. It also provides a polynomial
+                    representation for $C_p^0$ as the function of temperature
+                    \[
+                        \frac{C_p^0}{R} = a_0 + a_1 T + a_2 T^2 + a_3 T^3 + a_4 T^4
+                    \]
+                    using coefficients, provided by TRC.
+                </p>
+
+                <p>
+                    Coefficients $a_0, \dots, a_4$ could be found in table A
+                    section C of Poling et. al (2001). Some values
+                    for liquid and vapor heat capacities for T = 298.15K are
+                    presented ibid.
+                </p>
+
+                <h3>Departure Function</h3>
+
+                <p>
+                    Once we provided with analytic equation of state,
+                    we could derive analytic expression for departure function of isobaric
+                    heat capacity $C_p^0$. Derivations for general
+                    form of cubic equation of state and its specifications for
+                    Peng-Robinson and Soave-Redlich-Kwong equations are given
+                    in Chung-Nin Mak thesis. Some of the formulas are represented
+                    below.
+                </p>
+
+                <p>
+                    Suppose we are provided with a general cubic equation of state
+                    given in the form:
+                    \[
+                        P = \frac{RT}{V - b} - \frac{a(T)}{V^2 + \nu b V + \mu b^2}
+                    \]
+                    with couple compressibility factor equation being
+                    \[
+                        Z^3 + (\nu B - B - 1)Z^2 + (A + \mu B^2 - \nu B - \nu B^2) Z
+                        - (AB + \mu B^2 + \mu B^3) = 0
+                    \]
+                    where $A = \frac{a(T) P}{R^2 T^2}$ and $B = \frac{bP}{RT}$.
+                </p>
+
+                <p>
+                    Then the departure function for isobaric heat capacity
+                    could be expressed as
+                    \[
+                        C_p - C_p^0 = \frac{R(M - N)^2}{M^2 - A(2Z + \nu B)}
+                        - a''(T) \frac{T}{2\theta_1b}
+                        \ln \left\{\frac{Z + \theta_2 B}{Z + \theta_3 B}\right\} - R
+                    \]
+
+                    where
+                </p>
+
+                <table>
+                    <tr>
+                        <td>
+                            $$M = \frac{Z^2 + \nu BZ + \mu B^2}{Z - B}$$
+                        </td>
+                        <td>
+                            $$N = a'(T) \frac{B}{Rb}$$
+                        </td>
+                        <td>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            $$\theta_1 = \sqrt{\nu^2/4 - \mu}$$
+                        </td>
+                        <td>
+                            $$\theta_2 = \nu/2 - \theta_1$$
+                        </td>
+                        <td>
+                            $$\theta_3 = \nu/2 + \theta_1$$
+                        </td>
+                    </tr>
+                </table>
+
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Heat Capacities of Liquids</h2>
+
+                <h3>Derivation from Enthalpy</h3>
+
+                <p>
+                    By definition
+                    \[
+                        C_p = \left(\frac{\partial H}{\partial T}\right)_P
+                    \]
+
+                    Since we are provided with equation of state, we need to derive
+                    expression for enthalpy $H$ which we could differentiate.
+                    The following derivations follow those of section 8.2 of Pedersen
+                    and Christensen (2006).
+                </p>
+
+                <p>
+                     First of all we relate enthalpy of our real fluid with enthalpy of
+                     ideal gas:
+                     \[
+                        H = H^{\text{ig}} + H^{\text{res}}
+                     \]
+
+                     In case of mixture enthalpy of ideal gas is the simple
+                     compound
+                     \[
+                        H^{\text{ig}} = \sum_{i = 1}^N z_i H_i^{\text{ig}}
+                     \]
+                </p>
+
+                <p>
+                    See section 6.6 in Poling et. al. (2001)
+                </p>
+
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <ol id="citation">
+                    <li>
+                        <p>
+                            <a href="http://en.wikipedia.org/wiki/Heat_capacity">
+                                Wiki article</a> about the subject.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="http://en.wikipedia.org/wiki/Relations_between_heat_capacities">
+                                Wiki article</a> about the relations of $C_v$ and $C_p$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Chung-Nin Mak, P.
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122304351?hash=1af4c4c17375391f80">
+                                "Thermodynamic Properties from Cubic Equation of State"</a>.
+                            <i>Master Thesis at UBC</i>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Bondi, A. (1966).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122129558?hash=1c1fa87d65b2b6cde7">
+                                "Estimation of Heat Capacity of Liquids"</a>.
+                            <i>Industrial and Engineering Chemistry Fundamentals</i>
+                            <b>5 (4)</b>: 442&ndash;449.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1021/i160020a001">10.1021/i160020a001</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Poling, B. E., Prausnitz, J. M. and O'Conell, J. P. (2001).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118923438?hash=806bf14d1eae45bd31">
+                                "The Properties of Gases and Liquids"</a>.
+                            <i>McGraw-Hill Prof Med/Tech</i>.
+                            ISBN:0070116822, 9780070116825.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            R&#367;&#382;i&#269;ka, V. Jr. and Domalski, E. S. (1993).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122249013?hash=026da8ae098c2388ce">
+                                "Estimation Of the Heat Capacities of Organic Liquids as a Function of Temperature
+                                Using Group Additivity, I. Hydrocarbon Compounds"</a>.
+                            <i>Journal of Physical and Chemical Reference Data</i>
+                            <b>22 (3)</b>: 597&ndash;618.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1063/1.555923">10.1063/1.555923</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            R&#367;&#382;i&#269;ka, V. Jr. and Domalski, E. S. (1993).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122249170?hash=5ff1f2fbc6bfd1df1c">
+                                "Estimation Of the Heat Capacities of Organic Liquids as a Function of Temperature
+                                Using Group Additivity, II. Compounds of Carbon, Hydrogen, Halogens, Nitrogen, Oxygen, and Sulfur"</a>.
+                            <i>Journal of Physical and Chemical Reference Data</i>
+                            <b>22 (3)</b>: 619&ndash;657.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1063/1.555924">10.1063/1.555924</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            R&#367;&#382;i&#269;ka, V. Jr. and Domalski, E. S. (2004).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122249272?hash=70a368b2860e10f36f">
+                                "Estimation Of the Heat Capacities of Organic Liquids as a Function of Temperature
+                                Using Group Additivity, An Amendment."</a>.
+                            <i>Journal of Physical and Chemical Reference Data</i>
+                            <b>34 (1)</b>: 1071&ndash;1081.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1063/1.1889439">10.1063/1.1889439</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Pedersen, K. S. and Christensen, P. L. (2006).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120178336?hash=1edde402ed71c05e63">
+                                "Phase Behavior of Petroleum Reservoir Fluids"</a>.
+                            <i>CRC Press</i>
+                            ISBN:9780824706944.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Reid, C. R., Prausnitz, J. M. and Poling, B. E. (1987);
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_123335052?hash=7a743b963d2c80f77e">
+                                "The Properties of Gases and Liquids"</a>.
+                            <i>McGraw-Hill Prof Med/Tech</i>
+                            ISBN: 0070517991.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div id="footer">
+                <p>
+                    This template is created by <a href="http://kshmakov.org" target="_blank">Kirill Shmakov</a>.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content="compressbile liquid volumes"/>
+        <title>Volume of Compressible Liquid</title>
+        <script type="text/javascript"
+                src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+                        MathJax.Hub.Config({
+                            extensions: ["tex2jax.js","TeX/noErrors.js","TeX/AMSsymbols.js"],
+                            jax: ["input/TeX","output/HTML-CSS"],
+                            tex2jax: {
+                                inlineMath: [['$','$'],["\\(","\\)"]],
+                                displayMath: [['\\[','\\]'], ['$$','$$']]
+                            },
+                            "HTML-CSS": {availableFonts:["TeX"]}
+                        });
+        </script>
+        <link href="fluid.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter20713309 = new Ya.Metrika({id:20713309,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/20713309" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        <div id="wrapper">
+            <div id="header">
+                <h1>Volume of Compressible Liquid</h1>
+            </div>
+            <div id="body">
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>General Information</h2>
+
+                <p>
+                    According to Dymond and Malhotra (1988), in 1888 Tait established
+                    the following equation involving volume of compressible liquids:
+                    \[
+                    \frac{V_l - V}{V_l} = C \log\left[(B + P)/(B + P_l)\right]
+                    \]
+                    where:
+                </p>
+
+                <ul>
+                    <li>$V$ &mdash; volume</li>
+                    <li>$P$ &mdash; pressure</li>
+                    <li>subscript $_l$ refers to the low-pressure</li>
+                    <li>$B$ and $C$ are constants to be defined</li>
+                </ul>
+
+                <p>
+                    Integrated version of this equation could be written as:
+                    \[
+                        V = V_l \left(1 - C \ln \frac{B + P}{B + P_l}\right)
+                    \]
+                    where $V_l$ and $P_l$ now stand for reference volume and pressure.
+                </p>
+
+                <h2>Pure Liquids</h2>
+                <!------------------------------------------------------------------------>
+                <hr/>
+
+                <h3>Constants</h3>
+
+                <p>
+                    In case of pure liquids, following relations could be
+                    applied:
+                    \[
+                        B = P_c \left[ -1 + a (1 - T_r)^{1/3} + b (1 - T_r)^{2/3} +
+                        d (1 - T_r) + e (1 - T_r)^{4/3}\right] \\
+                        e = \exp(f + g \omega_0 + h \omega_0^2) \\
+                        C = j + k \omega_0
+                    \]
+                    where:
+                </p>
+
+                <ul>
+                    <li>$P_c, [Pa]$ &mdash; critical pressure</li>
+                    <li>$T_r = \frac{T}{T_c}, [0]$ &mdash; reduced temperature</li>
+                    <li>unknown coefficients $a, \dots, k$ could be found in Thomson, Brobst and Hankinson (1982)</li>
+                    <li>$\omega_0, [0]$ &mdash; optimized value of
+                        <a href="http://en.wikipedia.org/wiki/Acentric_factor">the acentric factor</a>
+                        based on the SRK equation
+                    </li>
+                </ul>
+
+                <h3>Volume</h3>
+
+                <p>
+                    We pick $V_l$ to be saturated volume $V_s$.
+                    Following estimation procedure could be applied:
+                    \[
+                        V_s = V^{\circ} V_R^{(0)} \left[1 - \omega_0 V_R^{(\delta)}\right] \\
+                        V_R^{(0)} = 1 + a (1 - T_r)^{1/3} + b (1 - T_r)^{2/3} +
+                        c (1 - T_r) + d (1 - T_r)^{4/3} \\
+                        V_R^{(\delta)} = \left[e + f T_r + g T_r^2 + h T_r^3 \right]
+                        / (T_r - 1.0001)
+                    \]
+                    where:
+                </p>
+
+                <ul>
+                    <li>$V_R^{(0)}, [0]$ &mdash; spherical molecule function,
+                        relation holds for $0.25 < T_r < 0.95$</li>
+                    <li>$V_R^{(\delta)}, [0]$ &mdash; needed for deviation function factor,
+                        relation holds for $0.25 < T_r < 1.0$</li>
+                    <li>$T_r = \frac{T}{T_c}, [0]$ &mdash; reduced temperature</li>
+                    <li>unknown coefficients $a, \dots, h$ could be found in Hankinson and Thomson (1979)</li>
+                    <li>$V^{\circ}, \left[\frac{\text{m}^3}{\text{mol}}\right]$ &mdash; characteristic volume,
+                        required for each pure compound</li>
+                    <li>$\omega_0, [0]$ &mdash; optimized value of
+                        <a href="http://en.wikipedia.org/wiki/Acentric_factor">the acentric factor</a>
+                        based on the SRK equation
+                    </li>
+                </ul>
+
+                <p>
+                    Characteristic volume $V^{\circ}$ could be either computed with correlation formula
+                    presented in Hankinson and Thomson (1979) or looked up from the table ibid.
+
+                    Acentric factor is supposed to coincide with one in Soave-Redlich-Kwong equation.
+                </p>
+
+                <h3>Pressure</h3>
+
+                <p>
+                    We pick $P_l$ to be saturated pressure $P_s$, which we could compute
+                    via <a href="http://en.wikipedia.org/wiki/Antoine_equation">Antoine-type
+                    equation</a>.
+                </p>
+
+                <p>
+                    The following schema are due to Poling et al. (2001),
+                    description of Riedel equation.
+
+                    \[
+                        \ln P_s = A - \frac{B}{T_r} + C \ln T_r + D T^6_r
+                    \]
+
+                    where:
+                </p>
+
+                <ul>
+                    <li>$A = -35Q$</li>
+                    <li>$B = -36Q$</li>
+                    <li>$C = 42Q + \alpha_c$</li>
+                    <li>$D = -Q$</li>
+                    <li>$Q = K(3.758 - \alpha_c)$</li>
+                    <li>$\alpha_c = \frac{3.758 K \psi_b + \ln \left(P_c/1.01325\right)}{K \psi_b - \ln T_{br}}$</li>
+                    <li>$\psi_b = -35 + \frac{36}{T_{br}} + 42 \ln T_{br} - T_{br}^6$</li>
+                    <li>$T_{br}, [0]$ &mdash; reduced boiling temperature</li>
+                </ul>
+
+                <h2>Mixtures</h2>
+                <!------------------------------------------------------------------------>
+                <hr/>
+
+                <!------------------------------------------------------------------------>
+                <hr/>
+
+                <ol id="citation">
+                    <li>
+                        <p>
+                            Dymond, J. H., and Malhotra, R. (1988).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119496318?hash=02d6d2ea540f9bcf5a">
+                                "The Tait equation: 100 years on"</a>.
+                            <i>International Journal of Thermophysics</i>
+                            <b>9 (6)</b>: 941&ndash;951.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1007%2FBF01133262">10.1007/BF01133262</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Hankinson, R. W., and Thomson, G. H. (1979).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119155017?hash=9f004ce2dd9ddb0b2f">
+                                "A New Correlation for Saturated Densities of Liquids and Their Mixtures"</a>.
+                            <i>AIChE Journal</i>
+                            <b>25 (4)</b>: 653&ndash;663.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002%2Faic.690250412">10.1002/aic.690250412</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Thomson, G. H., Brobst, K. R., and Hankinson, R. W. (1982).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119465297?hash=4192e46270e90eafd0">
+                                "An Improved Correlation Compressed Liquids and Liquid Mixtures"</a>.
+                            <i>AIChE Journal</i>
+                            <b>28 (4)</b>: 671&ndash;676.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002%2Faic.690280420">10.1002/aic.690280420</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Poling, B. E., Prausnitz, J. M. and O'Conell, J. P. (2001).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118923438?hash=806bf14d1eae45bd31">
+                                "The Properties of Gases and Liquids"</a>.
+                            <i>McGraw-Hill Prof Med/Tech</i>.
+                            ISBN:0070116822, 9780070116825.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div id="footer">
+                <p>
+                    This template is created by <a href="http://kshmakov.org" target="_blank">Kirill Shmakov</a>.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

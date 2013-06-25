@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content="compressbile liquid volumes"/>
+        <title>Vapor-Liquid Equilibrium</title>
+        <script type="text/javascript"
+                src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+                        MathJax.Hub.Config({
+                            extensions: ["tex2jax.js","TeX/noErrors.js","TeX/AMSsymbols.js"],
+                            jax: ["input/TeX","output/HTML-CSS"],
+                            tex2jax: {
+                                inlineMath: [['$','$'],["\\(","\\)"]],
+                                displayMath: [['\\[','\\]'], ['$$','$$']]
+                            },
+                            "HTML-CSS": {availableFonts:["TeX"]}
+                        });
+        </script>
+        <link href="fluid.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter20713309 = new Ya.Metrika({id:20713309,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/20713309" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        <div id="wrapper">
+            <div id="header">
+                <h1>Vapor-Liquid Equilibrium</h1>
+            </div>
+            <div id="body">
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Information</h2>
+
+                <h3>General</h3>
+
+                <p>
+                    We are interested in the systems in which vapor and liquid phase coexists under given
+                    physic conditions.
+                </p>
+
+                <p>
+                    In case of a simple fluid (i.e. fluid consisting of one chemical substance) its physical
+                    phase is "uniquely determined" by conditions. It means that although simple
+                    fluid could be represented by two different coexisting phases,
+                    such representations don't
+                    form a subset of full dimension  in
+                    <a href="http://en.wikipedia.org/wiki/Phase_space">phase space</a>.
+                    For our analysis such representations are transient and excluded from
+                    consideration.
+                </p>
+
+                <p>
+                    Contrary, in case of a compound fluid (i.e. fluid consisting of more than one chemical
+                    substance) there are some regions of full dimension in phases space where fluid
+                    could coexist in different states. Specific information for vapor-liquid decomposition
+                    in equilibrium is presented in this section.
+                </p>
+
+                <h3>Characterization</h3>
+
+                <p>
+                    In order to describe vapor-liquid decomposition of the compound fluid we
+                    need to know total fractions of liquid and vapor and the decompositions
+                    of liquid and gaseous parts into simple fluids.
+                </p>
+
+                <p>
+                    In what follows we describe compound fluid as composition of $N$ simple
+                    fluids with molar percent of $i$th component as $z_i, (i = 1, 2, \dots, N)$.
+                    We denote total fraction of gaseous part as $\beta$. Liquid part decomposition
+                    is given by molar percents denoted as $x_i$ and gaseous part is given by molar
+                    percents denoted as $y_i$.
+                </p>
+
+                <p>
+                    Necessary conditions for equilibrium of two phases could be described by
+                    the following equations:
+                </p>
+
+                <ol>
+                    <li>
+                        <p>
+                            Equality of pressures: \[ P^\text{L} = P^\text{V} \]
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Equality of temperatures: \[ T^\text{L} = T^\text{V} \]
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Equality of <a href="http://en.wikipedia.org/wiki/Chemical_potential">
+                            chemical potentials</a> of each component in both phases:
+                            \[
+                                \mu_i^\text{L} = \mu_i^\text{V},~~~~i = 1, \dots, N
+                            \]
+                        </p>
+                    </li>
+                </ol>
+
+                <p>
+                    Once we need to compute some physical properties of such a system
+                    in equilibrium, we need to specify some chemical potentials or their
+                    equivalent among different possibilities. After potentials are specified
+                    we somehow solve characterizing equations for $\beta, \bar{x}, \bar{y}$
+                    and use derived
+                    characterization for computation of physical properties.
+                </p>
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Fugacities</h2>
+
+                <h3>General</h3>
+
+                <p>
+                    One of the useful option is to chose
+                    <a href="http://en.wikipedia.org/wiki/Fugacity">fugacity</a> as
+                    the equivalent of chemical potential. Fugacity represents the "effective pressure"
+                    of element  in composition.
+                </p>
+
+                <p>
+                    Fugacity could be defined (see Haile and O'Connell (2005), section 4.3.2) as
+                    such a property which helps to match differential of chemical potential
+                    $\bar{G}_i$ along isothermal change in the following manner:
+                    \[
+                        d\bar{G}_i = RT d \ln \mathbb{f}_i
+                    \]
+                </p>
+
+                <h3>Fugacity Coefficients and Ideal Gas</h3>
+
+                <p>
+                    Since we know only differential, our definition of fugacity
+                    incomplete. We need to know some reference value. In case
+                    when we have a mixture with fractions given by molar percents
+                    $z_i$, which we treat as an ideal gas, we chose this reference
+                    value to be
+                    \[
+                        \mathbb{f}^{ig}_i = z_i P
+                    \] so that "effective pressure" of component in ideal gas
+                    mixture depends only on its molar percent.
+                </p>
+
+                <p>
+                    Fugacity coefficient is a ratio measure that indicates how
+                    the fugacity of a real substance deviates from that of an ideal gas.
+                    From the fugacity definition:
+                    \[
+                        \bar{G}_i(T, P, \bar{z}) - \bar{G}^{ig}_i(T, P, \bar{z}) =
+                        RT \ln \frac{\mathbb{f}_i(T, P, \bar{z})}{\mathbb{f}^{ig}_i(T, P, \bar{z})}
+                    \]
+
+                    The ratio of fugacities on the rhs is called the fugacity coefficient
+                    $\phi_i$:
+                    \[
+                        \phi_i = \frac{\mathbb{f}_i(T, P, \bar{z})}{\mathbb{f}^{ig}_i(T, P, \bar{z})} = \frac{\mathbb{f}_i(T, P, \bar{z})}{z_i P}
+                    \]
+                </p>
+
+                <h3>Fugacity Coefficients for Equation of State</h3>
+
+                <p>
+                    Suppose we are provided with a general cubic equation of state given in the
+                    form:
+                    \[
+                        P = \frac{RT}{V - b} - \frac{\Theta(T)}{V^2 + \delta V + \epsilon}
+                    \]
+                </p>
+
+                <p>
+                    With introduced new parameters $A = \frac{\Theta(T) P}{R^2 T^2}$,
+                    $B = \frac{bP}{RT}$, $D = \frac{\delta P}{RT}$ and
+                    $E = \frac{\epsilon P^2}{R^2 T^2}$ our equation changes into
+                    more standard-looking equation for a compressibility coefficient
+                    $Z = \frac{PV}{RT}$:
+                    \[
+                        Z^3 + (A - B + D -1) Z^2 + (E - BD - D - AB) Z - (B + 1)E = 0
+                    \]
+                </p>
+
+                <p>
+                    This equation could have either one or three real roots.
+                    If there is only one real root, it means that only one
+                    phase possible under such conditions. If it has three
+                    roots then the smallest corresponds to a liquid phase
+                    and the biggest corresponds to a vapor phase.
+                </p>
+
+                <p>
+                    Once we pick up a value for the compressibility factor, the
+                    following formulas could be applied for a fugacity coefficient
+                    calculation in new coefficients.
+                </p>
+
+                <ul>
+                    <li>
+                        <p>
+                            If $D^2 \neq 4E$ then
+                            \[
+                                \log \phi = \frac{A}{(D^2 - 4 E)^{1/2}} \ln \left\{
+                                    \frac{2Z + D - (D^2 - 4 E)^{1/2}}{2Z + D + (D^2 - 4 E)^{1/2}}
+                                \right\} - \ln\left\{Z - B\right\} - (1 - Z)
+                            \]
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            otherwise
+                            \[
+                                \log \phi = -\frac{P}{RT} \frac{2}{2Z + D} - \ln\left\{Z - B\right\} - (1 - Z)
+                            \]
+                        </p>
+                    </li>
+                </ul>
+                <p>
+                    In old coefficients this formulas are:
+                </p>
+
+                <ul>
+                    <li>
+                        <p>
+                            If $\delta^2 \neq 4\epsilon$ then
+                            \[
+                                \log \phi = \frac{\Theta(T)}{RT(\delta^2 - 4 \epsilon)^{1/2}} \ln \left\{
+                                    \frac{2V + \delta - (\delta^2 - 4 \epsilon)^{1/2}}{2V + \delta + (\delta^2 - 4 \epsilon)^{1/2}}
+                                \right\} - \ln\left\{Z(1 - b/V)\right\} - (1 - Z)
+                            \]
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            otherwise
+                            \[
+                                \log \phi = -\frac{1}{V + \delta / 2} - \ln\left\{Z(1 - b/V)\right\} - (1 - Z)
+                            \]
+                        </p>
+                    </li>
+                </ul>
+
+                <h3>Activity Coefficients and Ideal Solution</h3>
+
+                <p>
+                    To do.
+                </p>
+
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Computations</h2>
+
+                    <h3>Phase Iterative Phi-Phi Division</h3>
+
+                    <p>
+                        Under specified temperature and pressure, phase equilibrium
+                        condition could be described by the following set of non-linear equations:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <p>
+                                Materiel balance equations:
+                                \[
+                                    \beta y_i + (1 - \beta) x_i = z_i,~~~~i=1,\dots, N
+                                \]
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Equilibrium equations:
+                                \[
+                                    y_i \phi_i^\text{V} = x_i \phi_i^\text{L},~~~~i=1,\dots, N
+                                \]
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Summation of mole fractions:
+                                \[
+                                    \sum_{i=1}^N (y_i - x_i) = 0
+                                \]
+                            </p>
+                        </li>
+                    </ul>
+
+                    <p>
+                        According to Meichelsen (1982b), the following
+                        computational procedure could be applied.
+                    </p>
+
+                    <ol>
+                        <li>
+                            <p>
+                                We set up an initial guess for new parameters $K_i = \frac{y_i}{x_i}$.
+                                One of the option for this guess is due to Wilson (see formula 6.13 in
+                                Pedersen and Christensen (2006)):
+                                \[
+                                    K_i = \frac{P_{ci}}{P} \exp\left\{5.373 (1 + \omega_i) \left(1 - \frac{T_{ci}}{T}\right)\right\}
+                                \]
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                We solve following equation for the $\beta$ (vapor fraction):
+                                \[
+                                    \sum_{i = 1}^{N} \frac{(K_i - 1)z_i}{1 + \beta(K_i - 1)} = 0
+                                \]
+                            </p>
+                        </li><li>
+                            <p>
+                                We compute component molar percents as
+                                \[
+                                    x_i = \frac{z_i}{1 + \beta (K_i - 1)},~~~~i=1,\dots, N \\
+                                    y_i = \frac{K_i z_i}{1 + \beta (K_i - 1)},~~~~i=1,\dots, N
+                                \]
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Based on these molar percents we compute fugacity coefficients
+                                and substitute their ratio for $K_i$:
+                                \[
+                                    K_i \leftarrow \frac{\phi_i^\text{L}\left(\bar{x}\right)}{\phi_i^\text{V}\left(\bar{y}\right)}
+                                \]
+
+                                and then we start again with these new guesses.
+                            </p>
+                        </li>
+                    </ol>
+
+                    <p>
+                        Iterations should be repeated until  required precision is achieved.
+                    </p>
+                <!-- **************************************************************************** -->
+                <hr/>
+
+                <ol id="citation">
+                    <li>
+                        <p>
+                            <a href="http://en.wikipedia.org/wiki/Vapor–liquid_equilibrium">
+                                Wiki article</a> about the subject.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Calsep: internal survey
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118883428?hash=3df594bf5a6e18e6bd">
+                                "Method documentation for PVTsim 16"</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Meichelsen, M. L. (1982a).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120049122?hash=8849f0fb561269b4b6">
+                                "The isothermal flash problem. Part I. Stability"</a>.
+                            <i>Fluid Phase Equilibria</i>
+                            <b>9 (1)</b>: 1&ndash;19.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/0378-3812(82)85001-2">10.1016/0378-3812(82)85001-2</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Meichelsen, M. L. (1982b).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120049234?hash=28df581c25b54df98e">
+                                "The isothermal flash problem. Part II. Phase-split calculation"</a>.
+                            <i>Fluid Phase Equilibria</i>
+                            <b>9 (1)</b>: 21&ndash;40.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/0378-3812(82)85002-4">10.1016/0378-3812(82)85002-4</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Haile, J. M. and O'Connell, J. P. (2005).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119997193?hash=93b8c54ebfca89a6ba">
+                                "Thermodynamics: Fundamentals for Applications"</a>.
+                            <i>Cambridge University Press</i>.
+                            ISBN:9780521582063.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Poling, B. E., Prausnitz, J. M. and O'Conell, J. P. (2001).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118923438?hash=806bf14d1eae45bd31">
+                                "The Properties of Gases and Liquids"</a>.
+                            <i>McGraw-Hill Prof Med/Tech</i>.
+                            ISBN:0070116822, 9780070116825.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Olivera-Fuentes, C. (1991).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119862666?hash=b2ce19a68f1107a998">
+                                "Multicomponent Fugacity Coefficients and Residual Properties from Pressure-Explicit EoS"</a>.
+                            <i>Chemical Engineering Science</i>
+                            <b>46 (8)</b>: 2019&ndash;2029.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/0009-2509(91)80161-Q">10.1016/0009-2509(91)80161-Q</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Pedersen, K. S. and Christensen, P. L. (2006).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120178336?hash=1edde402ed71c05e63">
+                                "Phase Behavior of Petroleum Reservoir Fluids"</a>.
+                            <i>CRC Press</i>
+                            ISBN:9780824706944.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Redlich, O. and Kister, A. T. (1948).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_123691429?hash=dea18f333159bbef7f">
+                                "Algebraic Representation of Thermodynamic
+                                Properties and the Classification of Solutions"</a>.
+                            <i>Industrial and Engineering Chemistry</i>
+                            <b>40 (2)</b>: 345&ndash;348.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1021/ie50458a036">10.1021/ie50458a036</a>.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div id="footer">
+                <p>
+                    This template is created by <a href="http://kshmakov.org" target="_blank">Kirill Shmakov</a>.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

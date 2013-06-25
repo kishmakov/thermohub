@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content="Peng-Robinson 1976, Peng, Robinson, Equation of State"/>
+            <title>Peng&ndash;Robinson</title>
+            <script type="text/javascript"
+                    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+                        MathJax.Hub.Config({
+                            extensions: ["tex2jax.js","TeX/noErrors.js","TeX/AMSsymbols.js"],
+                            jax: ["input/TeX","output/HTML-CSS"],
+                            tex2jax: {
+                                inlineMath: [['$','$'],["\\(","\\)"]],
+                                displayMath: [['\\[','\\]'], ['$$','$$']]
+                            },
+                            "HTML-CSS": {availableFonts:["TeX"]}
+                        });
+            </script>
+            <link href="fluid.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter20713309 = new Ya.Metrika({id:20713309,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/20713309" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+
+        <div id="wrapper">
+            <div id="header">
+                <h1>Peng&ndash;Robinson equation</h1>
+            </div>
+            <div id="body">
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Pure Fluid</h2>
+
+                <h3>General</h3>
+
+                <p>
+                    Equation was presented in Peng and Robinson (1976) with some
+                    corrections made by the same authors in (1978).
+                    In what follows we are trying to stick to original
+                    notations, some of them are described
+                    <a href="notations_and_references.html">here</a>.
+                </p>
+
+                <p>
+                    Peng&ndash;Robinson equation itself is the special
+                    version of the general cubic equation of state with
+                    $\nu = 2$ and $\mu = -1$:
+                    \[
+                        P = \frac{R T}{V - b} - \frac{a(T)}{V^2 + 2bV - b^2}
+                    \]
+                    where
+                </p>
+
+                <table class="center" style="text-align: left; width: 50%">
+                    <tr>
+                        <td>
+                            $
+                                a(T) = \left[1 + \kappa \left(1 - \sqrt{T_r}\right)\right]^2 a_c
+                            $
+                        </td>
+                        <td>
+                            $
+                                \left[\frac{\text{kg}\cdot \text{m}^5}{\text{s}^2 \cdot \text{mol}^2}\right]
+                            $
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $
+                                a_c = [\Omega_a = 0.45724]\frac{R^2 T_c^2}{P_c}
+                            $
+                        </td>
+                        <td>
+                            $
+                                \left[\frac{\text{kg}\cdot \text{m}^5}{\text{s}^2 \cdot \text{mol}^2}\right]
+                            $
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $
+                                b = [\Omega_b = 0.07780] \frac{R T_c}{P_c}
+                            $
+                        </td>
+                        <td>
+                            $
+                                \left[\frac{\text{m}^3}{\text{mol}}\right]
+                            $
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    and $\kappa$ is a dimensionless parameter such that
+                </p>
+
+                <table class="center" style="text-align: left; width: 70%">
+                    <tr>
+                        <td>
+                            \[
+                                \omega \leqslant 0.49:
+                            \]
+                        </td>
+                        <td>
+                            $
+                                \kappa = 0.37464 + 1.54226 \omega - 0.26992 \omega^2
+                            $
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            \[
+                                \omega > 0.49:
+                            \]
+                        </td>
+                        <td>
+                            $
+                                \kappa = 0.379642 + 1.48503 \omega - 0.164423 \omega^2 + 0.016666 \omega^3
+                            $
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    With new variables $A = a(T)P\left/R^2T^2\right.$ and $B = bP/RT$
+                    it could be rewritten in terms of compressibility factor
+                    \[
+                        Z^3 + (B - 1) Z^2 + (A - 2B - 3B^2) Z + (B^3 + B^2 - AB) = 0
+                    \]
+                </p>
+
+
+                <h3>Plot Example</h3>
+                <p>
+                    You can <a href="http://technohub.kshmakov.org/vle">try some pressue evaluation</a> based on PR equation.
+                </p>
+
+                <p>
+                    Cubic polynomial examples for methane (CH4) for
+                    critical pressure at critical temperature and for nearly
+                    critical pressure at critical temperature:
+
+                    <img src="http://cs323127.userapi.com/v323127990/d24/eXxtngqrCH0.jpg" width="75%"/>
+
+                    It could be seen that at subcritical pressure there are two possibilities
+                    for a root. It means that the value of compressibility factor has two
+                    values: liquid and vapor.
+                </p>
+
+                <h3>Fugacity</h3>
+
+                <p>
+                    Formula for fugacity coefficient of simple fluid,
+                    calculated via PR equation, has expression
+                    \[
+                        \log \phi = \log \frac{\mathbb{f}}{P} = (Z - 1) - \ln\left\{Z - B\right\} -
+                        \frac{A}{2\sqrt{2} B} \ln \left\{\frac{Z + (\sqrt{2} + 1)B}{Z - (\sqrt{2}- 1)B}\right\}
+                    \]
+                </p>
+
+                <h3>Heat Capacity</h3>
+
+                <p>
+                    Departure function of heat capacity,
+                    calculated via PR equation, has expression
+                    \[
+                        C_p - C_p^0 = a''(T)\frac{T}{2\sqrt{2}b}
+                        \ln \left\{\frac{Z + (\sqrt{2} + 1)B}{Z - (\sqrt{2}- 1)B}\right\} +
+                        \frac{R (M - N)^2}{M^2 - 2A(Z + B)} - R
+                    \]
+                </p>
+                <p>
+                    Difference between capacities,
+                    calculated via PR equation, has expression
+                    \[
+                        C_v - C_p = \frac{R(M - N)^2}{2 A (Z + B) - M^2}
+                    \]
+                    where
+                </p>
+
+                <table class="center" style="text-align: left; width: 60%;">
+                    <tr>
+                        <td>
+                            $
+                                M = \frac{Z^2 + 2BZ - B^2}{Z - B}
+                            $
+                        </td>
+                        <td>
+                            $
+                                N = a'(T) \frac{B}{bR}
+                            $
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    In the case of simple fluid following formulas for
+                    derivative of parameter $a(T)$ could be applied
+                </p>
+
+                <table class="center" style="text-align: left; width: 60%;">
+                    <tr>
+                        <td>
+                            $
+                                a'(T)= \kappa a_c \left[\frac{\kappa}{T_c} - \frac{1+\kappa}{\sqrt{TT_c}}\right]
+                            $
+                        </td>
+                        <td>
+                            $
+                                a''(T)= \frac{\kappa a_c (1 + \kappa)}{2 \sqrt{T^3T_c}}
+                            $
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Sonic Speed</h3>
+
+                <p>
+                    According to the section about <a href="sonic_speed.html">sonic speed</a>,
+                    in case of PR equation, sonic speed could be expressed in analytic form as
+                    \[
+                        u_s = V \sqrt{
+                            \frac{C_p}{C_v M_w} \left(\frac{2 a(T)(V + b)}{(V^2 + 2bV - b^2)^2} -
+                            \frac{RT}{(V - b)^2}\right)
+                        }
+                    \]
+                    where $M_w$ os the molar weight.
+                </p>
+
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Mixtures</h2>
+
+                <h3>Mixing Rules</h3>
+
+                <p>
+                    Parameters of PR equation for the mixture of $N$ simple
+                    fluids where molar percent of the $i$-th component
+                    is $z_i$ are defined by mixing rules
+                </p>
+
+                <table class="center" style="width: 60%;">
+                    <tr>
+                        <td>
+                            \[
+                                a = \sum_{i=1}^{N} \sum_{j=1}^{N} z_i z_j a_{ij}
+                            \]
+                        </td>
+                        <td>
+                            \[
+                                b = \sum_{i=1}^{N} z_i b_i
+                            \]
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    Here $a_{ij}$ is expressed through empirically determined
+                    binary interaction coefficient $\delta_{ij}$ characterizing
+                    the binary formed by component $i$ and component $j$ as
+                    \[
+                        a_{ij} = (1 - \delta_{ij}) \sqrt{a_i a_j}
+                    \]
+                </p>
+
+                <p>
+                    Some $\delta_{ij}$ are tabulated (e.g. table 4.2
+                    in Pedersen and Christensen(2006)).
+                    For those one which are not tabulated formula
+                    of Chueh and Prausnitz (1967) could be used:
+                    \[
+                        1 - \delta_{ij} =
+                        \left[\frac{2 V_{c, i}^{1/6} V_{c, j}^{1/6}}{V_{c, i}^{1/3} + V_{c, j}^{1/3}}\right]^n
+                    \]
+                </p>
+
+                <h3>Fugacity</h3>
+
+                <p>
+                    Formula for fugacity coefficient of the mixture,
+                    calculated via PR equation and standard mixing rules,
+                    has expression
+                    (see Peng and Robinson (1976) or equation 4.65 in Pedersen and Christensen (2006) for more detail)
+                    \[
+                        \log \phi_i = \log \frac{\mathbb{f_i}}{z_i P}
+                         = - \ln (Z - B) + (Z - 1)\frac{b_i}{b} - \frac{A}{2\sqrt{2} B}
+                        \left[\frac{1}{a} \left(2 \sum_{j = 1}^N z_j a_{ij}\right) - \frac{b_i}{b} \right]
+                        \ln\left\{\frac{Z + (\sqrt{2} + 1) B}{Z - (\sqrt{2} - 1) B}\right\}
+                    \]
+                </p>
+
+                <h3>Heat Capacity</h3>
+
+                <p>
+                    Formulas for heat capacity departure function and
+                    difference of capacities for the mixture of simple
+                    fluids are the same as for the simple fluid.
+                    Corresponding changes for the expressions of derivatives
+                    of $a(T)$ should be done.
+                </p>
+
+                <p>
+                    Since $a$ is the linear combination of parameters $a_{ij}$,
+                    derivatives of $a$ are expressed through derivatives of $a_{ij}$
+                    straightforward
+                </p>
+
+                <table class="center" style="text-align: left; width: 60%;">
+                    <tr>
+                        <td>
+                            \[
+                                a' = \sum_{i=1}^{N} \sum_{j=1}^{N} z_i z_j a'_{ij}
+                            \]
+                        </td>
+                        <td>
+                            \[
+                                a'' = \sum_{i=1}^{N} \sum_{j=1}^{N} z_i z_j a''_{ij}
+                            \]
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    Derivatives of $a_{ij}$ in the case of time-independent
+                    interaction coefficients are given by formulas
+                </p>
+
+                <table class="center" style="text-align: left; width: 80%;">
+                    <tr>
+                        <td>
+                            \[
+                                a_{ij}' = \frac{1-\delta_{ij}}2
+                                \left[\frac{a_i'a_j + a_j'a_i}{\sqrt{a_i a_j}}\right]
+                            \]
+                        </td>
+                        <td>
+                            \[
+                                a_{ij}'' = \frac{1-\delta_{ij}}4
+                                \left[\frac{2a_i a_j (a_i'' a_j + 2a_i'a_j' + a_i a_j'') - (a_i'a_j + a_j'a_i)^2}{(a_i a_j)^{3/2}}\right]
+                            \]
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <ol id="citation">
+                    <li>
+                        <p>
+                            <a href="http://en.wikipedia.org/wiki/Equations_of_state#Peng.E2.80.93Robinson_equation_of_state">
+                                Wiki article</a> about the subject.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Peng, D. Y., and Robinson, D. B. (1976).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118789101?hash=c6a835934509d87711">
+                                "A New Two-Constant Equation of State"</a>.
+                            <i>Industrial and Engineering Chemistry: Fundamentals</i>
+                            <b>15</b>: 59&ndash;64.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1021%2Fi160057a011">10.1021/i160057a011</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Peng, D. Y., and Robinson, D. B. (1978).
+                            "The Characterization of the Heptanes and Heavier Fractions for the GPA Peng&ndash;Robinson Programs".
+                            <i>Gas Processors Association</i>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Calsep: internal survey
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118883428?hash=3df594bf5a6e18e6bd">
+                                "Method documentation for PVTsim 16"</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Poling, B. E., Prausnitz, J. M. and O'Conell, J. P. (2001).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118923438?hash=806bf14d1eae45bd31">
+                                "The Properties of Gases and Liquids"</a>.
+                            <i>McGraw-Hill Prof Med/Tech</i>
+                            ISBN:0070116822, 9780070116825.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Leland, Th. W. Jr., and Chapellear, P. S. (1968).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118927560?hash=1fb8bb8a3469ed3b8f">
+                                "The Corresponding States Principle — A Review of Current Theory and Practice"</a>.
+                            <i>Industrial and Engineering Chemistry</i>
+                            <b>60 (7)</b>: 15&ndash;43.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1021%2Fie50703a005">10.1021/ie50703a005</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Pedersen, K. S. and Christensen, P. L. (2006).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120178336?hash=1edde402ed71c05e63">
+                                "Phase Behavior of Petroleum Reservoir Fluids"</a>.
+                            <i>CRC Press</i>
+                            ISBN:9780824706944.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Chueh, P. L., and Prausnitz, J. M. (1967).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122603162?hash=e75fb7e39038d73a86">
+                                "Vapor-Liquid Equilibria at High Pressures.
+                                 Calculation of Partial Molar Volumes in Nonpolar Liquid Mixtures"</a>.
+                            <i>AIChE Journal</i>
+                            <b>13 (6)</b>: 1099&ndash;1107.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002/aic.690130612">10.1002/aic.690130612</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Huron, M.-J., and Vidal, J. (1979).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122603215?hash=63535fa5b07fe6e51e">
+                                "New Mixing Rules in Simple Equations of State for Representing
+                                Vapor-liquid Equilibria of Strongly Non-Ideal Mixtures"</a>.
+                            <i>Fluid Phase Equilibria</i>
+                            <b>3 (4)</b>: 255&ndash;271.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/0378-3812(79)80001-1">10.1016/0378-3812(79)80001-1</a>.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div id="footer">
+                <p>
+                    This template is created by <a href="http://kshmakov.org" target="_blank">Kirill Shmakov</a>.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

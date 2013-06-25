@@ -1,0 +1,197 @@
+@import url("../files/reset.css");
+
+html
+{ 
+    overflow-y : scroll; 
+}
+
+body 
+{
+     background: #FFFFFF;
+}
+
+h1 
+{    
+    color: #189188;
+    font-size: 40px;
+    font-weight: normal; 
+}
+
+h2 
+{   
+    color: #189188;
+    font-size: 24px;
+    font-weight: normal;         
+}
+
+h3 
+{    
+    color: #EE4545;
+    font-size: 22px;
+    font-weight: normal; 
+}
+
+p 
+{
+    font-size: 17px;
+    font-weight: normal; 
+}
+
+sub 
+{ 
+    font-size: 70%; 
+    vertical-align: sub;
+}
+
+hr 
+{
+    border: 0px none;
+    height: 2px;
+    color: #C3E4E9;
+    background-color: #C3E4E9;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+a:link, a:visited
+{
+    color:  #0000FF;
+}
+
+.center { 
+    margin-left:auto; 
+    margin-right:auto; 
+}
+
+/* wrapper */
+
+#wrapper {    
+    width: 930px;        
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+/* header */
+
+#header 
+{    
+    margin-left: auto;
+    margin-right: auto;    
+    text-align: center;
+}
+
+#header h1
+{
+    font-family: arial, tahoma;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+/* body */
+
+#body 
+{
+    padding-top: 7px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+#body h2 
+{
+    text-align: center;
+    font-family: arial, tahoma;    
+    padding-top: 10px;
+    padding-bottom: 1px;
+}
+
+#body h3
+{
+    font-family: arial, tahoma;        
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 1px;
+}
+
+
+#body p 
+{
+    font-family: tahoma;    
+    line-height: 130%;
+    padding-left: 30px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+#body ul 
+{
+    list-style: square;
+    padding-left: 30px;    
+}
+
+#body ol 
+{
+    list-style-type: lower-roman;
+    padding-left: 30px;    
+}
+
+#body ul p, #body ol p  
+{
+    padding-left: 0px;
+}
+
+ol#citation
+{
+    list-style-type: decimal;     
+    padding-left: 30px;        
+}
+
+ol#citation p 
+{
+    color:  #090909;
+    font-family: times;
+    font-size: 15px;  
+    line-height: 110%;
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
+#body table 
+{ 
+    width: 90%;     
+}
+
+div.post 
+{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #C3E4E9;
+    background-color: #C3E4E9;
+    margin-top: 15px;
+}
+
+div.post h3 
+{
+    background-color: white;
+}
+
+#body p.datalink 
+{
+    font-family: times;
+    font-size: 17px;
+    background: white;
+}
+
+/* footer */
+
+#footer 
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#footer p, #footer a 
+{
+    color: white;
+    font-family: times;
+}

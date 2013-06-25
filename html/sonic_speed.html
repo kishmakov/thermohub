@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content="Speed of the sound, sound speed, sonic speed"/>
+        <title>Sonic Speed</title>
+        <script type="text/javascript"
+                src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+                    MathJax.Hub.Config({
+                        extensions: ["tex2jax.js","TeX/noErrors.js","TeX/AMSsymbols.js"],
+                        jax: ["input/TeX","output/HTML-CSS"],
+                        tex2jax: {
+                            inlineMath: [['$','$'],["\\(","\\)"]],
+                            displayMath: [['\\[','\\]'], ['$$','$$']]
+                        },
+                        "HTML-CSS": {availableFonts:["TeX"]}
+                    });
+        </script>
+        <link href="fluid.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter20713309 = new Ya.Metrika({id:20713309,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/20713309" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        <div id="wrapper">
+            <div id="header">
+                <h1>Sonic Speed</h1>
+            </div>
+            <div id="body">
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Simple Fluid</h2>
+
+                <h3>EoS Approach</h3>
+
+                <p>
+                    According to Landau and Lifshitz (1959), sonic speed could be expressed as
+                    \[
+                        u_s = V \sqrt{
+                            -\frac{C_p}{C_v} \frac1{M_w} \left(\frac{\partial P}{\partial V}\right)_T
+                        }
+                    \]
+                    where $M_w$ is the molar weight of the fluid.
+                </p>
+
+                <p>
+                    Pedersen and Christensen (2006) provide similar expression
+                    \[
+                        u_s = \frac{V}{\sqrt{M_w}} \sqrt{\frac{C_p}{C_v} \left(\frac{\partial P}{\partial T}\right)_V
+                        \left(\frac{\partial T}{\partial V}\right)_P}
+                    \]
+
+                </p>
+
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Mixtures</h2>
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <ol id="citation">
+                    <li>
+                        <p>
+                            Kieffer, S. W. (1977).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_121545903?hash=e4c504c9d1905b890f">
+                                "Sound Speed in Liquid-Gas Mixtures: Water-Air and Water-Steam"</a>.
+                            <i>Journal of Geophysical Research</i>
+                            <b>82 (20)</b>: 2895&ndash;2904.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1029/JB082i020p02895">10.1029/JB082i020p02895</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Landau, L. D. and Lifshitz, E. M. (1959).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_122990229?hash=2ddc0be958ab3a9c21">
+                                "Vol. 6: Fluid Mechanics." (in Russian)</a>.
+                            <i>Pergamon Press.</i>
+                            ISBN: 978-0-08-009104-4.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Pedersen, K. S. and Christensen, P. L. (2006).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_120178336?hash=1edde402ed71c05e63">
+                                "Phase Behavior of Petroleum Reservoir Fluids"</a>.
+                            <i>CRC Press</i>
+                            ISBN:9780824706944.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div id="footer">
+                <p>
+                    This template is created by <a href="http://kshmakov.org" target="_blank">Kirill Shmakov</a>.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
