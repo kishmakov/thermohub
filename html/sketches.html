@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content="compressbile liquid volumes"/>
+        <title>Volume of Compressible Liquid</title>
+        <script type="text/javascript"
+                src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+                        MathJax.Hub.Config({
+                            extensions: ["tex2jax.js","TeX/noErrors.js","TeX/AMSsymbols.js"],
+                            jax: ["input/TeX","output/HTML-CSS"],
+                            tex2jax: {
+                                inlineMath: [['$','$'],["\\(","\\)"]],
+                                displayMath: [['\\[','\\]'], ['$$','$$']]
+                            },
+                            "HTML-CSS": {availableFonts:["TeX"]}
+                        });
+        </script>
+        <link href="fluid.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCoudnter20713309 = new Ya.Metrika({id:20713309,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/20713309" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        <div id="wrapper">
+            <div id="header">
+                <h1>Sketches</h1>
+            </div>
+            <div id="body">
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Pressure Simulation</h2>
+
+                <p>
+                    Let us consider some numeric toy example which would help understand the notion of pressure. 
+                    Suppose we have one dimensional interval with some point masses on it.
+                    Initially we set masses, positions and velocities of points at random. 
+                </p>
+
+                <p>
+                    After inital conditions are prescribed, we start to evolve this dynamical system. We 
+                    suppose that points collide as ellastic balls with each other and with walls.
+                    The impulse of force, which ball exert to the wall, equals to double absolute value 
+                    of ball momentum.  We would count such an impulses as compounds of our numeric pressure. 
+                </p>
+                
+                <p>
+                    Obviously pressure would be proportional to the time system was simulated, so it 
+                    make sense to consider normalized pressure $\frac{P}{T}$. What this normalized 
+                    pressure would be proportional in terms of initial conditions?
+                    The possibilities are:
+                </p>
+
+                <ul>
+                    <li>sum of masses $\sum m_i$</li>
+                    <li>sum of absolute value of momentums $\sum m_i v_i$</li>
+                    <li>sum of kenetic energies $\sum \frac{m_i v_i^2}2$</li>
+                </ul>
+
+                <!-- **************************************************************************** -->
+                <hr/>
+                <h2>Accelerating the Portion of Fluid</h2>
+
+                <p>
+                    Consider a simple setting. We are provided with some portion of heterogeneous fluid, which is
+                    initially at rest. We accelerate it with constant acceleration $a$
+                    as time goes from $0$ to $1$. As a result, portion would move with speed $a$
+                    and would possess kinetic energy $\frac{Ma^2}2$ where $M$ denotes total mass of the portion.
+                </p>
+
+                <p>
+                    Consider this process as an <a href="http://en.wikipedia.org/wiki/Adiabatic_process">adiabatic</a>.
+                    Then work $\frac{Ma^2}2$ applied to the systems results in internal energy increase.
+                    We would try to look at this process locally and would make a number of assumptions.
+                </p>
+
+                <ul>
+                    <li>our portion is located in "1D interval" with two point walls</li>
+                    <li>molecules collide like elastic balls</li>
+                    <li>molecule to wall collision is described by spring model</li>
+                </ul>
+
+                <p>
+                    Provided that fluid is heterogeneous, all molecules have the same mass
+                    which we denote as $m$. Assumption about 1D location allows us to treat
+                    molecules collision as penetration. In other words, molecules pass each
+                    other as if they exist in different worlds.
+                </p>
+
+                <p>
+                    Whats happening when molecule collides into wall? We assume that the wall acts
+                    as membrane and exert force on molecule proportional to the penetration of molecule.
+                    Consider two simple cases. Let us denote the stiffness of the wall with $k$.
+                </p>
+
+                <p>
+                    Case #1: molecule goes "to the left" with velocity $-v$ and meets the wall at the
+                    origin at time moment $t = 0$. At the same moment wall starts to accelerate "to the
+                    right" with acceleration $a$.
+                    Then, if we denote position of molecule as $u(t)$ we have the following ODE for it:
+
+                    \begin{aligned}
+                        m \ddot{u} & = k \left[at^2/2 - u \right] \\
+                        u(0) & = 0 \\
+                        \dot{u}(0) & = -v
+                    \end{aligned}
+                </p>
+
+                <p>
+                    Case #2: molecule goes "to the right" with velocity $v$ and meets the wall at the
+                    origin at time moment $t = 0$. At the same moment wall starts to accelerate "to the
+                    right" with acceleration $a$.
+                    Then, if we denote position of molecule as $u(t)$ we have the following ODE for it:
+
+                    \begin{aligned}
+                        m \ddot{u} & = - k \left[u - at^2/2 \right] \\
+                        u(0) & = 0 \\
+                        \dot{u}(0) & = v
+                    \end{aligned}
+                </p>
+
+                <p>
+                    These two equations differ only at initial conditions: $\dot{u}(0) = \pm v$.
+                    Let us introduce $\alpha = \frac{k}{m}$. Then the system turns into:
+
+                    \begin{aligned}
+                        & \ddot{u} + \alpha u = \alpha at^2/2  \\
+                        & u(0) = 0 \\
+                        & \dot{u}(0) = \pm v
+                    \end{aligned}
+                </p>
+
+                <p>
+                    General solution for such a second order ODE is the sum of the particular solution $u_1(t)$
+                    and general solution for homogenized system $u_2(t)$ where
+
+                    \begin{aligned}
+                        u_1(t) & = \frac{a}2 t^2 - \frac{a}{\alpha} \\
+                        u_2(t) & = c_0 \sin (\sqrt{\alpha} t) + c_1 \cos (\sqrt{\alpha} t)
+                    \end{aligned}
+                </p>
+
+                <p>
+                    Solving for $c_0$ and $c_1$ from boundary conditions, we end up with the solution:
+                    \[
+                        u(t) = \frac{a}2 t^2 + \frac{a}{\alpha} \left[\cos(\sqrt{\alpha} t) - 1 \right] \pm \frac{v}{\sqrt{\alpha}} \sin(\sqrt{\alpha} t)
+                    \]
+                </p>
+
+                <p>
+                    Time moment $t_0$ when molecule bounce off the wall is described by $u(t_0) = at^2_0 / 2$ or
+                    \[
+                        \frac{a}{\alpha} \left[\cos(\sqrt{\alpha} t_0) - 1 \right] \pm \frac{v}{\sqrt{\alpha}} \sin(\sqrt{\alpha} t_0) = 0
+                    \]
+                    Let us denote $\sqrt{\alpha} t_0$ as $x_0$ then this is equivalent to
+                    \[
+                        \mp \frac{a}{v \sqrt{\alpha}} = \frac{\sin(x_0)}{\cos(x_0) - 1} = - \frac{\cos(x_0 / 2)}{\sin(x_0 / 2)}
+                    \]
+                    and
+                    \[
+                        t_0 = \pm \frac{2}{\sqrt{\alpha}} \arctan \left(\frac{v \sqrt{\alpha}}{a}\right)
+                    \]
+                </p>
+
+                <p>
+                    Provided that, we could compute
+                     \begin{aligned}
+                        \sin(x_0) & = \pm \frac{2 \sqrt{\alpha} av}{a^2 + \alpha v^2} \\
+                        \cos(x_0) & = \frac{a^2 - \alpha v^2}{a^2 + \alpha v^2}
+                    \end{aligned}
+                    and then velocity of molecule at the moment of separation is given by
+                    \[
+                        \left.\dot{u}(t)\right|_{t_0} = \left.at - \frac{a}{\sqrt{\alpha}} \sin(\sqrt{\alpha} t) \pm v \cos(\sqrt{\alpha} t) \right|_{t_0} = at_0 \mp v
+                    \]
+                </p>
+
+                <p>
+                    Work of force, applied to the molecule, is expressed as
+                    \[
+                        \int_{0}^{t_0} m \ddot{u} \cdot \dot{u} dt = \\
+                        m \left(\frac{a^2t^2}2 + \frac{a^2 - \alpha v^2}{2\alpha} \sin(\sqrt{\alpha} t)^2 - \frac{a^2t}{\sqrt{\alpha}} \sin(\sqrt{\alpha} t) +
+                        a t v \cos(\sqrt{\alpha} t) - \frac{a v}{\sqrt{\alpha}} \sin(\sqrt{\alpha} t)\cos(\sqrt{\alpha} t)  \right|_0^{t_0}
+                    \]
+                </p>
+
+                <!------------------------------------------------------------------------>
+                <hr/>
+
+                <ol id="citation">
+                    <li>
+                        <p>
+                            Dymond, J. H., and Malhotra, R. (1988).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119496318?hash=02d6d2ea540f9bcf5a">
+                                "The Tait equation: 100 years on"</a>.
+                            <i>International Journal of Thermophysics</i>
+                            <b>9 (6)</b>: 941&ndash;951.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1007%2FBF01133262">10.1007/BF01133262</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Hankinson, R. W., and Thomson, G. H. (1979).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119155017?hash=9f004ce2dd9ddb0b2f">
+                                "A New Correlation for Saturated Densities of Liquids and Their Mixtures"</a>.
+                            <i>AIChE Journal</i>
+                            <b>25 (4)</b>: 653&ndash;663.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002%2Faic.690250412">10.1002/aic.690250412</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Thomson, G. H., Brobst, K. R., and Hankinson, R. W. (1982).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_119465297?hash=4192e46270e90eafd0">
+                                "An Improved Correlation Compressed Liquids and Liquid Mixtures"</a>.
+                            <i>AIChE Journal</i>
+                            <b>28 (4)</b>: 671&ndash;676.
+                            DOI:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002%2Faic.690280420">10.1002/aic.690280420</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Poling, B. E., Prausnitz, J. M. and O'Conell, J. P. (2001).
+                            <a rel="nofollow" class="external text" href="http://vk.com/doc7990_118923438?hash=806bf14d1eae45bd31">
+                                "The Properties of Gases and Liquids"</a>.
+                            <i>McGraw-Hill Prof Med/Tech</i>.
+                            ISBN:0070116822, 9780070116825.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div id="footer">
+                <p>
+                    This template is created by <a href="http://kshmakov.org" target="_blank">Kirill Shmakov</a>.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
