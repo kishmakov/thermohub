@@ -26,7 +26,7 @@ tasks.withType<KotlinCompile>().all {
 }
 
 application {
-    mainClassName = "MainKt"
+    mainClassName = "thermo.MainKt"
 }
 
 dependencies {
