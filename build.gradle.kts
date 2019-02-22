@@ -1,28 +1,23 @@
-import org.jetbrains.kotlin.gradle.dsl.Coroutines
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-group = "Thermo"
-version = "1.0-SNAPSHOT"
-
-val ktor_version = "1.1.2"
+description = "Server side of Thermo project"
 
 plugins {
     application
     kotlin("jvm") version "1.3.21"
 }
+//
+group = "Thermo"
+version = "1.0-SNAPSHOT"
+
+val ktor_version = "1.1.2"
 
 repositories {
     jcenter()
-    maven("http://kotlin.bintray.com/ktor")
+    maven("http://dl.bintray.com/kotlin/ktor")
     mavenCentral()
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
-}
-
-tasks.withType<KotlinCompile>().all {
-    kotlinOptions.jvmTarget = "1.8"
 }
 
 application {
@@ -32,6 +27,7 @@ application {
 dependencies {
     compile(kotlin("stdlib-jdk8"))
     compile("io.ktor:ktor-server-netty:$ktor_version")
+    compile("io.ktor:ktor-html-builder:$ktor_version")
     compile("ch.qos.logback:logback-classic:1.2.3")
     testCompile(group = "junit", name = "junit", version = "4.12")
 }
