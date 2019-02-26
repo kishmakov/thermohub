@@ -13,15 +13,23 @@ fun main(args: Array<String>) {
             get("/") {
                 call.respondHtml {
                     head {
-                        title { + "Hi from Thermo"}
+                        title { + "Thermo"}
                     }
                     body {
                         h1 {
-                            +"A title"
+                            id="first_header"
+                            +"Fluids"
                         }
-                        p {
-                            +"For body"
+
+                        select {
+                            for (fluid in fluidList()) {
+                                option {
+                                    id = fluid
+                                    +fluid
+                                }
+                            }
                         }
+
                     }
                 }
             }
