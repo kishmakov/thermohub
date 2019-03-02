@@ -1,14 +1,16 @@
-package thermo
+package ru.kirillshmakov.thermo.server
 
 import io.ktor.application.*
 import io.ktor.html.respondHtml
 import io.ktor.routing.*
-import io.ktor.server.engine.*
-import io.ktor.server.netty.*
 import kotlinx.html.*
 
-fun main(args: Array<String>) {
-    embeddedServer(Netty, 8080) {
+fun Application.main() {
+    ServerApplication().apply { main() }
+}
+
+class ServerApplication {
+    fun Application.main() {
         routing {
             get("/") {
                 call.respondHtml {
@@ -34,5 +36,5 @@ fun main(args: Array<String>) {
                 }
             }
         }
-    }.start(wait = true)
+    }
 }

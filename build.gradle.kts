@@ -1,28 +1,33 @@
 description = "Server side of Thermo project"
+group = "Thermo"
+version = "1.0-SNAPSHOT"
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath(kotlin("gradle-plugin"))
+    }
+}
 
 plugins {
     application
     kotlin("jvm") version "1.3.21"
 }
-//
-group = "Thermo"
-version = "1.0-SNAPSHOT"
 
-val ktor_version = "1.1.2"
+application {
+    mainClassName = "io.ktor.server.netty.DevelopmentEngine"
+}
 
 repositories {
     jcenter()
     maven("http://dl.bintray.com/kotlin/ktor")
-    mavenCentral()
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-}
+sourceSets["main"].resources.srcDir("resources")
 
-application {
-    mainClassName = "thermo.MainKt"
-}
+val ktor_version = "1.1.2"
 
 dependencies {
     compile(kotlin("stdlib-jdk8"))
@@ -31,3 +36,4 @@ dependencies {
     compile("ch.qos.logback:logback-classic:1.2.3")
     testCompile(group = "junit", name = "junit", version = "4.12")
 }
+
