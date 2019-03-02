@@ -1,5 +1,5 @@
 description = "Server side of Thermo project"
-group = "Thermo"
+group = "ru.kirillshmakov.thermo"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -35,5 +35,6 @@ dependencies {
     compile("io.ktor:ktor-html-builder:$ktor_version")
     compile("ch.qos.logback:logback-classic:1.2.3")
     testCompile(group = "junit", name = "junit", version = "4.12")
+    testCompile("io.ktor:ktor-server-test-host:$ktor_version")
 }
 
