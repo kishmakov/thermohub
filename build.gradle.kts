@@ -1,5 +1,5 @@
 description = "Server side of Thermo project"
-group = "ru.kirillshmakov.thermo"
+group = "ru.kirillshmakov"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -17,7 +17,7 @@ plugins {
 }
 
 application {
-    mainClassName = "io.ktor.server.netty.DevelopmentEngine"
+    mainClassName = "io.ktor.server.netty.EngineMain"
 }
 
 repositories {
@@ -33,6 +33,7 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
     compile("io.ktor:ktor-server-netty:$ktor_version")
     compile("io.ktor:ktor-html-builder:$ktor_version")
+    compile("io.ktor:ktor-websockets:$ktor_version")
     compile("ch.qos.logback:logback-classic:1.2.3")
     testCompile(group = "junit", name = "junit", version = "4.12")
     testCompile("io.ktor:ktor-server-test-host:$ktor_version")
