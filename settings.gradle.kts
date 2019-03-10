@@ -1,3 +1,3 @@
 rootProject.name = "thermohub"
 
-include("common", "js", "server")
+include("common", "client", "server")
