@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.kirillshmakov.thermo.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.kirillshmakov.thermo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.kirillshmakov.thermo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.kirillshmakov.thermo.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.kirillshmakov.thermo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.kirillshmakov.thermo.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/thermo.iml" filepath="$PROJECT_DIR$/.idea/modules/thermo.iml" />
     </modules>
   </component>
 </project>
