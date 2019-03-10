@@ -1,5 +1,5 @@
-description = "Server side of Thermo project"
-group = "ru.kirillshmakov"
+description = "Server side of Thermohub project"
+group = "tech.thermohub"
 version = "1.0-SNAPSHOT"
 
 buildscript {

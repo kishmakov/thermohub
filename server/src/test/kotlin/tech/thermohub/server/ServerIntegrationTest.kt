@@ -1,10 +1,9 @@
-package ru.kirillshmakov.thermo.test
+package tech.thermohub.server
 
 import io.ktor.application.*
 import io.ktor.http.*
 import io.ktor.server.testing.*
 import org.junit.Test
-import ru.kirillshmakov.thermo.server.*
 import kotlin.test.assertTrue
 
 class ServerIntegrationTest {

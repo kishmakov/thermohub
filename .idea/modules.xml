@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/ru.kirillshmakov.server.iml" filepath="$PROJECT_DIR$/.idea/modules/server/ru.kirillshmakov.server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/ru.kirillshmakov.server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/server/ru.kirillshmakov.server.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/ru.kirillshmakov.server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/server/ru.kirillshmakov.server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/tech.thermohub.server.iml" filepath="$PROJECT_DIR$/.idea/modules/server/tech.thermohub.server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/tech.thermohub.server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/server/tech.thermohub.server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/tech.thermohub.server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/server/tech.thermohub.server.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/thermohub.iml" filepath="$PROJECT_DIR$/.idea/modules/thermohub.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/thermohub.client.iml" filepath="$PROJECT_DIR$/.idea/modules/client/thermohub.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/thermohub.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/thermohub.common.iml" />

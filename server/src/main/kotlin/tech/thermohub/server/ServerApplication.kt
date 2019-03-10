@@ -1,4 +1,4 @@
-package ru.kirillshmakov.thermo.server
+package tech.thermohub.server
 
 import io.ktor.application.*
 import io.ktor.html.respondHtml
