@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="thermohub:jvmMain" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="kotlin-language" name="Kotlin">
+      <configuration version="3" platform="JVM 1.6" useProjectSettings="false" isTestModule="false" externalProjectId="thermohub">
+        <sourceSets>
+          <sourceSet>thermohub.commonMain</sourceSet>
+        </sourceSets>
+        <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
+        <compilerSettings />
+        <compilerArguments>
+          <option name="destination" value="$MODULE_DIR$/../../build/classes/kotlin/jvm/main" />
+          <option name="classpath" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-websockets/1.1.3/44acca29e3c5ba1a42d09df8df629cdb32363d04/ktor-websockets-1.1.3.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-html-builder/1.1.3/5fa961204a363c28e613a696972ec5f982faabbe/ktor-html-builder-1.1.3.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-core/1.1.3/246c5b16adbb0bad25ab5d8dddc6fb651f8e25e3/ktor-server-core-1.1.3.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-cio/1.1.3/47e0be9d70818ab08be9ec8c5a05a13347167b8a/ktor-http-cio-1.1.3.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-jvm/1.1.3/7ee93a1a4ec1e6274a49a27fdff546bf3b1663d/ktor-http-jvm-1.1.3.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-network/1.1.3/79c80c205bcac1442f9d45ae91222a5ddd60d143/ktor-network-1.1.3.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-utils-jvm/1.1.3/bf55431317b60ea57b43ee896651773ccf5c442e/ktor-utils-jvm-1.1.3.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.3.21/d0634d54452abc421db494ad32dd215e6591c49f/kotlin-stdlib-jdk8-1.3.21.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.3.21/d207ce2c9bcf17dc8e51bab4dbfdac4d013e7138/kotlin-stdlib-jdk7-1.3.21.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.21/d0d5ff2ac2ebd8a42697af41e20fc225a23c5d3b/kotlin-reflect-1.3.21.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-io-jvm/0.1.6/c0147f472d788a7b2e451b46e1e26b5093b0730/kotlinx-coroutines-io-jvm-0.1.6.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-io-jvm/0.1.6/a05cbb3480835e25bdd66a87c2f35a45a793d5b9/kotlinx-io-jvm-0.1.6.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-html-jvm/0.6.12/95dfe9d85947c8dd57c16dced385a37280166e56/kotlinx-html-jvm-0.6.12.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-jdk8/1.1.1/830dbee69f68af66803b8b426e0a5f48be7a7db4/kotlinx-coroutines-jdk8-1.1.1.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.1.1/3d2b7321cdef9ebf9cb7729ea4f75a6f6457df86/kotlinx-coroutines-core-1.1.1.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.21/4bcc2012b84840e19e1e28074284cac908be0295/kotlin-stdlib-1.3.21.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu/0.12.2/b164d85b406b8bbec6bed935755fe0df412bde34/atomicfu-0.12.2.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/com.typesafe/config/1.3.1/2cf7a6cc79732e3bdf1647d7404279900ca63eb0/config-1.3.1.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-io/0.1.6/70aec74c12fb2eb3bb6dd9dd3331b5a74e1a3f37/kotlinx-coroutines-io-0.1.6.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-common/1.1.1/7ed04382bdf0c89c5d87ac462aa4935ae8e85243/kotlinx-coroutines-core-common-1.1.1.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-io/0.1.6/da1ba2f92bddb47f27ea0fa577c85f54f67736d7/kotlinx-io-0.1.6.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/f30e4a9897913e53d778f564110bafa1fef46643/kotlin-stdlib-common-1.3.21.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar:/Users/kirill.shmakov/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-common/0.12.2/2b9f5910aebb4a0e5a611f0b2fda527d5ebaec5c/atomicfu-common-0.12.2.jar" />
+          <option name="noStdlib" value="true" />
+          <option name="noReflect" value="true" />
+          <option name="moduleName" value="thermohub" />
+          <option name="addCompilerBuiltIns" value="true" />
+          <option name="loadBuiltInsFromDependencies" value="true" />
+          <option name="languageVersion" value="1.3" />
+          <option name="apiVersion" value="1.3" />
+          <option name="pluginOptions">
+            <array />
+          </option>
+          <option name="pluginClasspaths">
+            <array />
+          </option>
+          <option name="multiPlatform" value="true" />
+          <option name="errors">
+            <ArgumentParseErrors />
+          </option>
+        </compilerArguments>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../build/classes/kotlin/jvm/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/jvmMain">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/jvmMain/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/jvmMain/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="thermohub.commonMain" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-network:1.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-http-jvm:1.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-utils-jvm:1.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-http-cio:1.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-server-core:1.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-io:0.1.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-io:0.1.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:atomicfu-common:0.12.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.3.21" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-html-jvm:0.6.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-io-jvm:0.1.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-io-jvm:0.1.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe:config:1.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:atomicfu:0.12.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.3.21" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.21" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.3.21" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-websockets:1.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-html-builder:1.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.21" level="project" />
+  </component>
+</module>

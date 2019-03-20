@@ -1,4 +1,4 @@
-package tech.thermohub.server
+package tech.thermohub
 
 import io.ktor.application.*
 import io.ktor.http.*

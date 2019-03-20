@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="thermohub-jvm">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="thermohub-jvm.jar">
+      <element id="module-output" name="thermohub.jvmMain" />
+    </root>
+  </artifact>
+</component>
