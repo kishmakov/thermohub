@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     application
     kotlin("multiplatform") version "1.3.21"
@@ -43,7 +45,7 @@ val copyResources by tasks.creating(Copy::class) {
 
 val copyClasses by tasks.creating(Copy::class) {
     dependsOn(copyResources)
-    into("build/classes/java/main")
+    into("build/classes/kotlin/main")
     from("build/classes/kotlin/jvm/main")
 }
 
